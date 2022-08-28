@@ -48,19 +48,25 @@ void ICACHE_FLASH_ATTR user_init()
 //	I2C_MASTER_SDA_LOW_SCL_LOW();
 	i2c_user_gpio_init();
 	I2C_USER_SDA_LOW_SCL_LOW();
+	ets_delay_us(100000);
+
 	//--------------------------------
 	OLED_init();
 	LCD_Clear();
+	ets_delay_us(100000);
+
 	//--------------------------------
 	LCD_Goto(0, 0);
 	OLED_string("ZDAROVA!!");
+	ets_delay_us(100000);
+
 
 
 	while(1)
 	{
-		ets_delay_us(1000000);
+		ets_delay_us(100000);
 		system_soft_wdt_feed();
-		ets_delay_us(1000000);
+		ets_delay_us(100000);
 		system_soft_wdt_feed();
 	}
 }
